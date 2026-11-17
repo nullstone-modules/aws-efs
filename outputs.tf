@@ -12,3 +12,8 @@ output "security_group_id" {
   value       = aws_security_group.this.id
   description = "string ||| ID of the security group attached to the file system"
 }
+
+output "mount_target_ips" {
+  value       = aws_efs_mount_target.file.*.ip_address
+  description = "list(string) ||| IP addresses of the mount targets"
+}
